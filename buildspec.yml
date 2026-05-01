@@ -6,7 +6,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - REPOSITORY_URI=<account_id>.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/myapp-repo
+      - REPOSITORY_URI=541426239397.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/myapp-repo
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
@@ -18,9 +18,14 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"myapp-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-
+      #- echo Writing image definitions file...
+      - echo Writing imageDetail file...
+      #- printf '[{"name":"myapp-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
+      - echo Done.
 
 artifacts:
-  files: imagedefinitions.json
+  files: 
+    - imageDetail.json
+    - appspec.yaml
+    - taskdef.json
