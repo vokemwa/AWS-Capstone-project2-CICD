@@ -14,3 +14,15 @@
 * Below is the screenshot for the ECR
 
 ![alt text](image-1.png)
+
+## Create Elastic container service (ECS)
+  ### Create an ECS cluster
+  * Go to ECS Clusters
+  * Click create cluster
+  * give it a cluster name `project-capstone2-cluster`
+  * Under infrastructure, select `Fargate only`
+  * Click create
+
+  * Below is a screenshot of the cluster created
+
+  ![alt text](image-2.png)
