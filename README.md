@@ -5,3 +5,12 @@
 
 ![alt text](image.png)
 
+## Create Elastic container registry (ECR)
+
+* Search for ECR in the search bar
+* Click the orange Create repository button
+* Give it a name `myapp-repo`
+* Create
+* Below is the screenshot for the ECR
+
+![alt text](image-1.png)
