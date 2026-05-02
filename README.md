@@ -37,7 +37,7 @@
 
         * Below is the screenshot of the execution role
 
-          
+          ![alt text](image-3.png)
 
       * Under Container - 1
         * give it a name that matches the appspec.yaml file
@@ -47,7 +47,7 @@
 
         * Below is the screenshot for the task definition 
         
-        ![alt text](Screenshot 2026-05-02 033632.png)
+      ![alt text](image-6.png)
         
 
 
