@@ -174,3 +174,6 @@ This is my deploy steps in github.
 
 ![alt text](image-16.png)
 
+The error has moved to task definition stage
+
+![alt text](image-17.png)
