@@ -118,4 +118,38 @@ Create three inbound rules:
 
 ![alt text](image-11.png)
 
+## Create an ECS service on the cluster
+* I used the below script to create the service
+
+`cat <<EOF > service-config.json
+{
+    "cluster": "project-capstone2-cluster",
+    "serviceName": "myapp-service",
+    "taskDefinition": "myapplication-task",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:541426239397:targetgroup/application-target-group-blue/94f35f8acfa837cf",
+            "containerName": "myapp-container",
+            "containerPort": 3000
+        }
+    ],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "deploymentController": {
+        "type": "CODE_DEPLOY"
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": ["subnet-0ea862101538781c3", "subnet-026189493581a9fb2"],
+            "securityGroups": ["sg-028091cb543ffc7b3"],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}
+EOF`
+
+* Below is the screenshot of my service
+
+![alt text](image-12.png)
+
 
