@@ -26,3 +26,25 @@
   * Below is a screenshot of the cluster created
 
   ![alt text](image-2.png)
+
+  ## AWS ECS Task definition
+     ### Create a task definition for the ECS cluster
+      * This is a blueprint for the application that tells Amazon ECS how to run the Docker containers
+      * Click `Create new task definition`
+      * Give it `task definition family name` `myapplication-task`
+      * Launch type `AWS Fargate`
+      * Select `Task execution role`
+
+        * Below is the screenshot of the execution role
+
+        ![alt text](image-3.png)
+
+      * Under Container - 1
+        * give it a name that matches the appspec.yaml file
+        * Paste ECR Image url: `541426239397.dkr.ecr.us-east-1.amazonaws.com/myapp-repo`
+        * Port mappings: Container port: `3000` Protocol: `TCP`, Port name: `myapplication-3000-tcp`
+        * Click Create
+
+        * Below is the screenshot for the task definition 
+
+
