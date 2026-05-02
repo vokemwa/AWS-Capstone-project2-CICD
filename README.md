@@ -47,7 +47,6 @@
 
         * Below is the screenshot for the task definition 
         
-      ![alt text](image-6.png)
-        
+    ![alt text](image-7.png)
 
 
