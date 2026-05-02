@@ -77,3 +77,45 @@
 * Why are both target groups set to port `80`?
 The port on a Target Group tells the Load Balancer which port your Docker container is listening on. Since your container is always listening on port 3000 (or whatever you set in your Dockerfile), both target groups are effectively just "gateways" to that same container port.
 
+## Part B: Create security group
+* Security group acts as a firewall with specific inbound rules
+* Go to the EC2 Console.
+* In the left-hand menu, under Network & Security, click Security Groups.
+* Click the orange `Create security group` button.
+* Security group name `security-group-lb`
+* Description `Allow HTTP 80 and 8080 for Blue-Green deployment`
+* Select `VPC` and it should be the same as the one in the target groups
+### Inbound rules
+Create three inbound rules:
+* Type: `HTTP`	Protocol: `TCP`	Port Range: `80`	Source: `0.0.0.0/0`
+* Type: `Custom TCP`	Protocol: `TCP`	Port Range: `8080`	Source: `0.0.0.0/0`
+* Type: `Custom TCP`	Protocol: `TCP`	Port Range: `3000`	Source: `0.0.0.0/0`
+
+### Outbound rules
+* allow default i.e. all traffic to allow the application load balancer talk to the containers
+* Click `Create security group`
+
+* Below is the screenshot for the security group
+
+![alt text](image-10.png)
+
+
+## Part C: Create application Load balancer
+
+* Go to EC2 Console > Load Balancers > Create load balancer
+* Select Application Load Balancer > Create
+* Give it a name `application-loadbalancer`
+* Scheme: `Internet-facing`
+* Select default `VPC`
+* Select at least two Subnets in different Availability Zones
+* Select the security group created above `security-group-lb`
+
+### Add listeners and Routing
+* Listener1: Protocol: `HTTP`, Port: `80`, Default action: `Forward to targetgrp-blue`
+* Listener2: Protocol: `HTTP`, Port: `8080`, Default action: `Forward to targetgrp-green`
+* Click `Create load balancer`
+* Screenshot for the load balancer
+
+![alt text](image-11.png)
+
+
