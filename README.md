@@ -164,4 +164,9 @@ Create three inbound rules:
 
 ![alt text](image-14.png)
 
+## Check the status of deploy.yaml file
+my deploy.yaml file failed. Will troubleshoot
+
+![alt text](image-15.png)
+
 
