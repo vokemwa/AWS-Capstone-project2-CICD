@@ -177,3 +177,10 @@ This is my deploy steps in github.
 The error has moved to task definition stage
 
 ![alt text](image-17.png)
+
+
+## Deployment status in progress
+
+![alt text](image-18.png)
+
+![alt text](image-19.png)
