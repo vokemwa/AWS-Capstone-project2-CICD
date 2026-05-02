@@ -37,7 +37,7 @@
 
         * Below is the screenshot of the execution role
 
-        ![alt text](image-3.png)
+        ![alt text](image-4.png)
 
       * Under Container - 1
         * give it a name that matches the appspec.yaml file
@@ -46,5 +46,7 @@
         * Click Create
 
         * Below is the screenshot for the task definition 
+
+         ![alt text](image-5.png)
 
 
