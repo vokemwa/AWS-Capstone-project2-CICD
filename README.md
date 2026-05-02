@@ -158,6 +158,10 @@ Create three inbound rules:
 
 ![alt text](image-13.png)
 
+## Added for repository secret keys in github under settings
 
+* Here is the screenshot
+
+![alt text](image-14.png)
 
 
