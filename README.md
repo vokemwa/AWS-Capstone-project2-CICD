@@ -50,4 +50,30 @@
         
   ![alt text](image-7.png)
 
+## Set up application load balancer
+### PartA: Create two target groups i.e. Blue/Green
+* Go to EC2 Console > Target Groups > Create target group.
+
+* Target type: select `IP addresses`
+* Set target group for Blue 
+* Give it a name `application-target-group-blue`
+* For protocol: `HTTP`, Port: `80`
+* IP address type: `IPv4`
+* VPC: `Pick default vpc`
+* Do not register targets here because ECS will automatically spin up containers, get their private IP addresses and register them.
+* Create target group for blue
+
+* Here is the screenshot for blue target group
+
+![alt text](image-8.png)
+
+* Repeat the same for Green target group
+
+
+* Below is the screenshot for green target group
+
+![alt text](image-9.png)
+
+* Why are both target groups set to port `80`?
+The port on a Target Group tells the Load Balancer which port your Docker container is listening on. Since your container is always listening on port 3000 (or whatever you set in your Dockerfile), both target groups are effectively just "gateways" to that same container port.
 
