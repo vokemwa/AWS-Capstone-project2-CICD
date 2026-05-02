@@ -169,4 +169,8 @@ my deploy.yaml file failed. Will troubleshoot
 
 ![alt text](image-15.png)
 
+## Troubleshooting the error
+This is my deploy steps in github. 
+
+![alt text](image-16.png)
 
