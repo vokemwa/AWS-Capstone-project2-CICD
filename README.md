@@ -152,4 +152,12 @@ Create three inbound rules:
 
 ![alt text](image-12.png)
 
+## Codedeploy configurations
+* I have configured codedeploy to swap traffic between blue and green deployments
+* Below is the screenshot
+
+![alt text](image-13.png)
+
+
+
 
